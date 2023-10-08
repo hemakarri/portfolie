@@ -1,0 +1,101 @@
+/* Default styles for larger screens */
+.navbar {
+    height: 7vh;
+    width: 100vw;
+    border: 1px groove;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2vh;
+    background-color: #f95959;
+}
+
+.btn-btn {
+    height: 30px;
+    width: 160px;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: none;
+}
+
+.carousel {
+    position: absolute;
+    margin-top: 20px;
+}
+
+.cimage {
+    height: 380px;
+    width: 770px;
+    text-align: center;
+    margin-left: 280px;
+}
+
+.proj {
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-around;
+  }
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .btn-btn {
+        width: 100%;
+    }
+
+    .cimage {
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .carousel {
+        margin-top: 0;
+    }
+
+    
+ 
+    /* Center align the project cards vertically and horizontally */
+    .proj {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    /* Add margin to create spacing between project cards */
+    .max-w-sm {
+      margin-bottom: 1rem;
+    }
+  
+    /* Reduce padding for project card content */
+    .p-3 {
+      padding: 1rem;
+    }
+  
+    /* Adjust text size and spacing for better mobile readability */
+    .text-xl {
+      font-size: 1.25rem; /* Adjust as needed */
+    }
+  
+    .text-sm {
+      font-size: 0.875rem; /* Adjust as needed */
+    }
+  
+    .mb-2 {
+      margin-bottom: 0.5rem; /* Adjust as needed */
+    }
+  
+    /* Change the size of the SVG icon */
+    .w-3, .h-3 {
+      width: 0.8rem; /* Adjust as needed */
+      height: 1rem; /* Adjust as needed */
+    }
+ 
+  
+
+}
