@@ -1,108 +1,128 @@
-/* Default styles for larger screens */
-/* .header {
-   
-} */
-
-.header {
-    height: 30vh;
+/* Custom Header Styles */
+.custom-header {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .custom-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    border: 1px groove;
-    position: relative;
-    background-color: #374151; /* Background color */
-    overflow: hidden;
-    border: 2px solid transparent; /* Initial border, transparent */
-    border-radius: 10px; /* Rounded corners */
-/*   
-    Add a linear gradient border, adjust colors as needed */
-    
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    transition: all 0.3s; /* Transition for hover effect */
+    max-width: 1200px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Profile Section */
+  .profile-section {
+    text-align: center;
+  }
+  
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #1e3c72;
+  }
+  
+  .user-name {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e3c72;
+  }
+  
+  .user-role {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Tech Stack Section */
+  .tech-stack-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .tech-stack-img {
+    width: 120px;
+    height: auto;
+    margin-left: 80%;
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cta-button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .cta-button:hover {
+    background: #e68900;
   }
   
 
-.image {
-    display: flex;
-    flex-direction: row;
-    margin-top: -100px;
-    margin-left: 300px;
-}
 
-.mern {
-    height: 150px;
-    margin-top: -50px;
-    margin-left: 200px;
-}
 
-.img {
-    height: 25vh;
-    width: 15vw;
-    border-radius: 50%;
-    margin-right: 90vw;
-    margin-top: 13px;
-}
-
-.profile-name {
-    margin-left: -100px;
-}
-
-.proffesion-name {
-    margin-left: -100px;
-    margin-top: -20px;
-}
-
-.button {
-    margin-left: 66vw;
-    border: none;
-    border-radius: 15px;
-    height: 30px;
-    width: 120px;
-}
-
-.btn {
-    margin-top: -120px;
-    margin-left: 950px;
-}
-
-/* Media query for mobile devices */
-@media (max-width: 768px) {
-    .header {
-        height: 135x; /* Adjust the height for smaller header */
-    }
-    .image {      
-        display: none;
+  @media (max-width: 768px) {
+    .custom-header-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
     }
 
-    .mern {
-        height: auto;
-        margin-top: 0;
-        margin-left: 0;
+    .profile-pic {
+        width: 70px;
+        height: 70px;
+        margin-left: -70%;
     }
 
-    .img {
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        position: relative;
-        margin-right: 0;
-        margin-top: 30px;
-        /* padding-top: 13px; */
+    .user-name {
+        font-size: 16px;
+        margin-left: -130%;
     }
 
-    .profile-name,
-    .proffesion-name {
-        margin-left: 0;
-        margin-top: 10px;
+    .user-role {
+        font-size: 12px;
+        margin-left: -140%;
     }
 
-    .button {
-        margin-left: 0;
+    .tech-stack-section {
         margin-top: 0px;
-        width: 100%;
     }
 
-    .btn {
-        margin-top: 10px;
-        margin-left: 0;
+    .tech-stack-img {
+        margin-left: 210%;
+        width: 100px;
+        height: 100px;
+        margin-top: -110%;
+    }
+
+    .cta-section {
+        margin-top: 15px;
+        grid-template-rows: repeat();
+    }
+
+    .cta-button {
+        font-size: 14px;
+        padding: 8px 16px;
     }
 }

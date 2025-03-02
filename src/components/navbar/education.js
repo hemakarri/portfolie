@@ -7,7 +7,9 @@ import { Document, Page, pdfjs } from 'react-pdf';
 // import { saveAs } from 'file-saver';
 import PDFDownloadButton from './PDFDownloadButton';
 import react,{useEffect,useState} from 'react'
-import profile from "../images/profile.jpeg"
+// import profile from "../images/profile.jpeg"
+// import profile from './images/profile1.JPG';  // Your profile image path
+
 
 
 // pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;

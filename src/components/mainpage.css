@@ -1,42 +1,143 @@
-.main{
-   height: 650px;
-    width:100%; 
-    background-size: cover;
-    background-image: url('https://wallpaperaccess.com/full/5651986.jpg');
-    
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden; /* Hide overflow for animations */
+  padding: 10px;
 }
 
-.para{
-font-family: cursive;
-margin-top: 80px;
-margin-right:190px;
-transform: rotate(35deg);
+.profile-image {
+  width: 200px; /* Adjusted for mobile */
+  height: 200px;
+  margin-top: 10%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  animation: imageDrop 1.5s ease-out;
 }
 
-.btn{
-    margin-top: 390px;
-    margin-left: 540px;
-    width: 280px;
+@keyframes imageDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+.intro {
+  margin-top: 15px;
+}
 
-@media (max-width: 768px) {
-    .main {
-        height: auto;
-        background-image: none;
-     }
+.name {
+  font-size: 2rem;
+  font-weight: bold;
+  animation: slideFromLeft 1.5s ease-out;
+}
+
+.role {
+  font-size: 1.5rem;
+  color: #00ffff;
+  animation: slideFromRight 1.5s ease-out;
+}
+
+.para {
+  margin-top: 10px;
+  width: 90%;
+  line-height: 1.6;
+  font-size: 1rem;
+  animation: fadeUp 2s ease-out;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  width: 70%;
+  border-radius: 25px;
+  background: linear-gradient(to right, #00ff99, #00ffff);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.4s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #00ffff, #00ff99);
+  transform: scale(1.05);
+}
+
+/* Hand Animation */
+.hand {
+  font-size: 40px;
+  position: absolute;
+  left: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: handMove 1.8s ease-in-out forwards;
+  display: none;
+}
+
+@keyframes handMove {
+  0% {
+    left: -80px;
+    opacity: 0;
+  }
+  50% {
+    left: 30%;
+    opacity: 1;
+  }
+  100% {
+    left: 110%;
+    opacity: 0;
+  }
+}
+
+/* Media Query for Mobile */
+@media (max-width: 480px) {
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
   
-     .para {
-        margin-top: 260px;
-        margin-right: 20px;
-        transform: none;
-     }
-  
-     .btn {
-        margin-top: 40px;
-        margin-left: 40px;
-        width: 150px /* Adjust the margin and padding */
-     }
+  .name {
+    font-size: 1.8rem;
+  }
+
+  .role {
+    font-size: 1.3rem;
+  }
+
+  .para {
+    font-size: 0.9rem;
+    text-align: justify;
+    margin-bottom: 80%;
+  }
+
+  .btn {
+    width: 50%;
+    padding: 8px 18px;
+    margin-left: 20%;
+  }
 }
- 
- 

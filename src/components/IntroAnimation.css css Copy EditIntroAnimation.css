@@ -1,0 +1,17 @@
+.animation-box {
+    text-align: center;
+    transform: translateY(30px);
+    animation: slideUp 1.5s ease-in-out forwards;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  

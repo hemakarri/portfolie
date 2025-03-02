@@ -4,7 +4,7 @@ import { FaBeer } from "react-icons/fa";
 import Data from './components/data';
 import Submit from './components/submit';
 import Mainpage from './components/mainpage';
-
+// import IntroAnimation from './components/IntroAnimation';
 import Skills from './components/navbar/skills';
 import About from './components/navbar/about';
 import Education from './components/navbar/education';
@@ -29,6 +29,7 @@ function App() {
         <Route exact path='/about' element={<About/>}/>
         <Route exact path='/education' element={<Education/>}/>
         <Route exact path='/contact' element={<Contact/>}/>
+        {/* <Route exact path='/IntroAnimation'element={<IntroAnimation/>}/> */}
       </Routes>
      </Router>
      

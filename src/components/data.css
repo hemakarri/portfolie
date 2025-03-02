@@ -1,101 +1,241 @@
-/* Default styles for larger screens */
-.navbar {
-    height: 7vh;
-    width: 100vw;
-    border: 1px groove;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 2vh;
-    background-color: #f95959;
+/* Main Data Container */
+.data-container {
+  text-align: center;
+  padding: 16px 14px;
+  background: #f4f4f9;
+  background: linear-gradient(145deg, #f4f4f9, #e6e6f0);
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  animation: fadeIn 2s ease-in-out;
 }
 
-.btn-btn {
-    height: 30px;
-    width: 160px;
-    margin-top: 8px;
-    border-radius: 10px;
-    border: none;
+/* Heading Styling */
+.data-heading {
+  font-size: 1.6rem;
+  color: #333;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
 }
 
-.carousel {
-    position: absolute;
-    margin-top: 20px;
+/* Subtitle Styling */
+.data-subtitle {
+  font-size: 2.2rem;
+  margin-top: 20px;
+  color: #555;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeIn 2s ease-in-out;
+  font-family: 'Roboto', sans-serif;
 }
 
-.cimage {
-    height: 380px;
-    width: 770px;
-    text-align: center;
-    margin-left: 280px;
+/* Dynamic Skill Text */
+.dynamic-skill {
+  color: #007BFF;
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
 
-.proj {
-    display: flex;
-    
-    align-items: center;
-    justify-content: space-around;
+/* Hover Effect for Skill */
+.dynamic-skill:hover {
+  color: #ff5722;
+}
+
+/* Button Styling */
+.reveal-btn {
+  margin: 20px;
+  padding: 12px 28px;
+  background: #007BFF;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.reveal-btn:hover {
+  background: #0056b3;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Skills, Projects, and Contact Boxes */
+.skills-box,
+.projects-box,
+.contact-box {
+  display: none;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  margin-top: 30px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.skills-box.show {
+  display: grid;
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideFromTop 1s ease-in-out;
+}
+
+.projects-box.show,
+.contact-box.show {
+  display: grid;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Cards for Skills & Projects */
+.skill-card,
+.project-card {
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  width: 77%;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeUp 1s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.skill-card:hover,
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Project Image Hover Effects */
+.project-card img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Links Styling */
+.contact-box a {
+  margin: 12px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.contact-box a:hover {
+  color: #007BFF;
+  transform: translateX(5px);
+}
+
+/* Download Resume Button */
+.download-resume {
+  padding: 12px 30px;
+  background: #007BFF;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 30px;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 1px;
+}
+
+.download-resume:hover {
+  background: #0056b3;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
   }
-/* Media query for mobile devices */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        height: auto;
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    .btn-btn {
-        width: 100%;
-    }
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    .cimage {
-        width: 100%;
-        height: auto;
-        margin: 20px auto;
-        text-align: center;
-    }
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-    .carousel {
-        margin-top: 0;
-    }
 
-    
- 
-    /* Center align the project cards vertically and horizontally */
-    .proj {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    /* Add margin to create spacing between project cards */
-    .max-w-sm {
-      margin-bottom: 1rem;
-    }
-  
-    /* Reduce padding for project card content */
-    .p-3 {
-      padding: 1rem;
-    }
-  
-    /* Adjust text size and spacing for better mobile readability */
-    .text-xl {
-      font-size: 1.25rem; /* Adjust as needed */
-    }
-  
-    .text-sm {
-      font-size: 0.875rem; /* Adjust as needed */
-    }
-  
-    .mb-2 {
-      margin-bottom: 0.5rem; /* Adjust as needed */
-    }
-  
-    /* Change the size of the SVG icon */
-    .w-3, .h-3 {
-      width: 0.8rem; /* Adjust as needed */
-      height: 1rem; /* Adjust as needed */
-    }
- 
-  
 
+
+
+
+@media screen and (max-width: 768px) {
+  .data-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .dynamic-skill {
+    font-size: 1.4rem;
+  }
+
+  .reveal-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .skill-card,
+  .project-card {
+    width: 90%;
+  }
+
+  .download-resume {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+  .data-heading {
+    font-size: 0.9rem;
+  }
 }

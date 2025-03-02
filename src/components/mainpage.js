@@ -1,30 +1,43 @@
-import {Link} from 'react-router-dom'
-import "./mainpage.css"
+import { useNavigate } from 'react-router-dom';
+import './mainpage.css';
+import profileImage from './images/profile1.JPG';
 
 function Mainpage() {
+  const navigate = useNavigate();
+  const buttonText = window.innerWidth <= 768 ? 'Explore My World 🌐' : 'Click to Explore 🚀';
 
-  const buttonText = window.innerWidth <= 768 ? 'Explore my world' : 'Click here to explore';
+  const showHand = () => {
+    const hand = document.querySelector('.hand');
+    hand.style.display = 'block'; // Show Hand
+    setTimeout(() => {
+      navigate('/data'); // Use React Router's navigate for redirection
+    }, 1800); // Same Duration as Animation
+  };
 
+  return (
+    <div className="main">
+      {/* Hand Emoji */}
+      <div className="hand">🖐️</div>
 
-    return (
-      <div className="main" >
+      {/* Profile Image */}
+      <img src={profileImage} alt="Profile" className="profile-image" />
 
-    <Link to="/data"><button className='btn bg-blue-700 hover:bg-blue-900 text-white 
-  font-bold py-2 px-4 w-900 rounded-full flex'>{buttonText}</button></Link>
-   
- <p className='para'>Hi welcome to my <br />
- port folio.<br />
-  iam a full stack developer <br />
-  with 2 years of experince <br />
-  if you want to <br />
-  know more about me  <br /> 
-  
-  click that explore 
-  </p>
-
-
+      <div className="intro">
+        <h1 className="name">Hi, I'm <span className="highlight">Karri Hema Prasad</span></h1>
+        <h2 className="role">Frontend Developer</h2>
       </div>
-    )    
+
+      <button className="btn" onClick={showHand}>
+        {buttonText}
+      </button>
+      <p className="para">
+        Welcome to my portfolio! <br />
+        With 3 years of experience in frontend development, I am passionate about creating beautiful and functional websites.
+        <br />
+        Click to explore more about me!
+      </p>
+    </div>
+  );
 }
 
 export default Mainpage;
